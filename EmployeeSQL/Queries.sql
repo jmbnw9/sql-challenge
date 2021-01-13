@@ -16,3 +16,11 @@ SELECT e.emp_no, d.dept_no, d.dept_name, e.first_name, e.last_name, m.emp_no
 FROM dept_manager AS m 
 INNER JOIN employees AS e ON m.emp_no=e.emp_no
 INNER JOIN departments AS d ON d.dept_no=m.dept_no;
+
+--List the department of each employee with the following information: 
+--employee number, last name, first name, and department name.
+SELECT e.emp_no, dept.dept_no, e.first_name, e.last_name, d.dept_name
+FROM dept_emp AS dept
+INNER JOIN employees AS e ON dept.emp_no=e.emp_no
+INNER JOIN departments AS d ON d.dept_no=dept.dept_no;
+
